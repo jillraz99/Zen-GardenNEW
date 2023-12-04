@@ -1,0 +1,33 @@
+@use 'variables' as *;
+@use 'atoms';
+
+// use the mixins from the atoms module to compose our molecules. If you prefer the terminology 'blocks' and 'elements' feel free to use it instead!
+//The base styling we made on our atoms (elements) does most of the work...here we would make any modifications on the elements if they need to appear differently in a certain molecule (block)
+[role="banner"] {
+  > h1 {
+    // notice we have to reference the 'atoms' namespace to find our mixins.
+    @include atoms.uppercase($text-light);
+    
+  }
+}
+.summary {
+  @include atoms.uppercase($text-light);
+  text-align: center;
+  padding: 0% 10% 5%;
+
+  a {
+    color: $text-light; //in this case the link wants to be light instead of the default dark
+  }
+}
+.preamble {
+  background: $background-color;
+  padding: 5% 10%;
+}
+
+ul {
+  padding-left: 1.5em;
+}
+
+.design-selection ul {
+    padding-left: 3em;
+}

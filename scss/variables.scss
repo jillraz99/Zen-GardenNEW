@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif+Caption:ital@0;1&display=swap');
+
+/*fonts and colors
+White(text-light)        #FFFFFF (text color)
+Gray(background)        #D9D9D9 (background)
+Dark Gray(text-dark)    #231C11 (text color)
+Dark Navy(primary)     #0A265B (body text and Hero section background color)
+Dark Green(accent1)     #0F9252 (tree and the link section background)
+Med Green(accent2)    #00BF64 (tree)
+Light Green)accent3)    #7ED957 (tree)
+
+Fonts
+Heading       PT Serif Caption
+Body    PT Sans
+*/
+
+$fonts-headline: "PT Serif Caption", serif;
+$fonts-body: 'PT Sans', sans-serif;
+$background-color: #D9D9D9;
+$primary: #0A265B;
+$accent1: #0F9252;
+$accent2: #00BF64 ;
+$accent3: #7ED957;
+//$grey-sidebar: rgba(51, 55, 69, 0.9);
+$text-dark: #231C11;
+$text-light: #fff;

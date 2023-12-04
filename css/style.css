@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif+Caption:ital@0;1&display=swap");
+/*fonts and colors
+White(text-light)        #FFFFFF (text color)
+Gray(background)        #D9D9D9 (background)
+Dark Gray(text-dark)    #231C11 (text color)
+Dark Navy(primary)     #0A265B (body text and Hero section background color)
+Dark Green(accent1)     #0F9252 (tree and the link section background)
+Med Green(accent2)    #00BF64 (tree)
+Light Green)accent3)    #7ED957 (tree)
+
+Fonts
+Heading       PT Serif Caption
+Body    PT Sans
+*/
+h1,
+h3,
+h4 {
+  font-family: "PT Serif Caption", serif;
+  margin: 0;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 7em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1em;
+  height: 500px;
+}
+
+h2 {
+  font-family: "PT Sans", sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 2em;
+  color: #fff;
+  font-weight: 200;
+  text-transform: uppercase;
+  /* Thin
+  letter-spacing: 1px;
+  line-height: 1em;
+  padding: 0.5em 0 0.25em 0; */
+}
+
+h4 {
+  font-size: 1.5em;
+  font-weight: 200; /* Thin
+letter-spacing: 1px;
+line-height: 1em;
+margin: 0.5em 0; */
+}
+
+p {
+  font-family: "PT Sans", sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #fff;
+  padding: 0.5em 0;
+  margin: 0;
+}
+
+.preamble h3 {
+  padding-bottom: 4%;
+  color: #0F9252;
+}
+
+.preamble p {
+  color: #231C11;
+}
+
+.main h3 {
+  padding-bottom: 2%;
+  padding-top: 4%;
+  color: #3ABF63;
+}
+
+a {
+  color: #7ED957;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "PT Sans", sans-serif;
+  font-size: 1em;
+  line-height: 1.3em;
+  font-size: 1.2em;
+}
+
+a:hover {
+  color: #0F9252;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+header {
+  padding-top: 30px;
+  text-align: center;
+}
+
+[role=banner] > h1 {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.summary {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  padding: 0% 10% 5%;
+}
+.summary a {
+  color: #fff;
+}
+
+.preamble {
+  background: #D9D9D9;
+  padding: 5% 10%;
+}
+
+ul {
+  padding-left: 1.5em;
+}
+
+.design-selection ul {
+  padding-left: 3em;
+}
+
+.intro {
+  padding-top: 5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #D9D9D9;
+  padding: 0% 0% 5% 0%;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 85%;
+  color: #231C11;
+  background-color: #D9D9D9;
+  margin: 0;
+}
+
+/* Yuri - Name grid areas */
+section {
+  grid-area: section;
+  background-color: #0A265B;
+}
+
+.main {
+  grid-area: main;
+  background-color: #0A265B;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+/* Yuri - Creating Grid Structures */
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 4.5em repeat(3, 1fr) 4.5em;
+  grid-template-rows: auto;
+  grid-template-areas: ". section section section . " ". main main sidebar .";
+  grid-column-gap: 30px;
+  grid-row-gap: 50px;
+  max-width: 1800px;
+}
+
+/* Yuri - Change back to block structure below 880px */
+@media (max-width: 880px) {
+  .page-wrapper {
+    display: block;
+  }
+  .sidebar {
+    margin: 10% 8%;
+  }
+}
+div#zen-supporting {
+  padding: 5% 10% 10% 10%;
+}
+
+/* Header */
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes enlarge {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale 1;
+  }
+}
+.intro h1 {
+  animation-name: slideInTop, enlarge;
+  animation-duration: 1s;
+  animation-delay: 0s, 1s;
+  animation-timing-function: ease-out, ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.intro h2 {
+  font-size: 2.5em;
+  height: 60px;
+  animation: 1s ease-out 0s 1 slideInRight;
+}
+
+.summary {
+  clear: right;
+}
+
+.intro h2 {
+  margin-top: 0%;
+  margin-bottom: 50px;
+}
+
+/*  Hero Image */
+section#zen-intro {
+  background-image: url(../images/zen-garden-trees-moon.png);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center 28%;
+}
+
+/* Aside */
+.sidebar li {
+  list-style: none;
+  padding: 20px;
+}
+
+.design-selection li {
+  list-style: none;
+  padding: 15px 45px;
+  background-image: url(../images/tree-icon-small.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 30px;
+}
+
+.design-selection li a {
+  display: block;
+}
+
+.sidebar li {
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar li:hover {
+  scale: 1.1;
+  transform: translate(30px, 0px);
+}
+
+.design-selection a.designer-name {
+  display: inline;
+  text-transform: capitalize;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.design-selection,
+.design-archives,
+.zen-resources {
+  background-color: #fff;
+  margin-left: 10px;
+}
+
+.design-selection, .design-archives {
+  margin-bottom: 40px;
+}
+
+.sidebar nav, .zen-resources ul {
+  padding-bottom: 15px;
+}
+
+.design-selection h3 {
+  background-color: #00BF64;
+  padding: 25px;
+}
+
+.design-archives h3,
+.zen-resources h3 {
+  background-color: #0A265B;
+  padding: 25px;
+}
+
+/*  Yuri Media Queries */
+@media (min-width: 600px) and (max-width: 880px) {
+  h1 {
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+  .design-selection {
+    grid-area: design;
+  }
+  .design-archives {
+    grid-area: archives;
+  }
+  .zen-resources {
+    grid-area: resources;
+  }
+  .sidebar .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "design design archives" "design design resources";
+  }
+  .design-selection {
+    margin-bottom: 0px;
+  }
+  .sidebar .wrapper a {
+    line-height: 1.5em;
+  }
+  .design-archives ul,
+  .zen-resources ul {
+    padding-left: 0em;
+  }
+  .sidebar h3 {
+    font-size: 1.5em;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 3em;
+    line-height: 1.1em;
+    height: 200px;
+  }
+  .intro h2 {
+    float: none;
+    font-size: 1.2em;
+    height: 40px;
+    padding-right: 0;
+  }
+  .summary p {
+    font-size: 0.6em;
+  }
+  header,
+  .summary {
+    padding-right: 8%;
+    padding-left: 8%;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  p, a {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 600px) {
+  .design-archives li,
+  .zen-resources li {
+    padding-bottom: 0px;
+    padding-top: 15px;
+    padding-left: 1em;
+  }
+  .sidebar h3,
+  .sidebar ul {
+    padding-left: 2em;
+  }
+  section#zen-intro {
+    background-position: center 25%;
+  }
+}
+footer {
+  margin-top: 5%;
+}
+footer a {
+  background-image: linear-gradient(#0F9252, #7ED957);
+  color: white;
+  padding: 0.3em 0.8em;
+  margin-right: 1em;
+  line-height: 3em;
+}
+
+/*# sourceMappingURL=style.css.map */

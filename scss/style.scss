@@ -1,0 +1,284 @@
+@use "variables" as *; //this puts all the variables in the global namespace.
+@use 'atoms';
+@use 'molecules';
+@use 'organisms' as o;
+
+* {
+  box-sizing: border-box;
+}
+html {
+  background-color: $background-color;
+  padding: 0% 0% 5% 0%;
+}
+
+body {
+  font-family: $fonts-body;
+  font-size: 85%;
+  color: $text-dark;
+  background-color: $background-color;
+  margin: 0;
+}
+
+/* Yuri - Name grid areas */
+section {
+    grid-area: section;
+    background-color: $primary;
+}
+.main {
+    grid-area: main;
+        background-color: $primary;
+}
+.sidebar {
+    grid-area: sidebar;
+}
+
+/* Yuri - Creating Grid Structures */ 
+.page-wrapper {
+    display: grid;
+    grid-template-columns: 4.5em repeat(3, 1fr) 4.5em;
+    grid-template-rows: auto;
+    grid-template-areas:
+        ". section section section . "
+        ". main main sidebar .";
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    max-width: 1800px;
+}
+
+/* Yuri - Change back to block structure below 880px */
+@media (max-width: 880px){
+    .page-wrapper {
+    display: block;
+    }
+    .sidebar {
+        margin: 10% 8%;
+    }
+}
+
+div#zen-supporting {
+    padding: 5% 10% 10% 10%;
+}
+
+/* Header */
+@keyframes slideInRight {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(0);}
+  }
+
+  @keyframes slideInTop {
+    0% {transform: translateY(-100%);}
+    100% {transform: translateY(0);}
+  }
+
+  @keyframes enlarge {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale (1);}
+    }
+
+
+  .intro h1 {
+    animation-name: slideInTop, enlarge;
+    animation-duration: 1s;
+    animation-delay: 0s, 1s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1;
+    
+  }
+
+.intro h2 {
+  font-size: 2.5em;
+  height: 60px;
+  animation: 1s ease-out 0s 1 slideInRight;
+}
+
+.summary {
+    clear: right;
+}
+
+.intro h2 {
+    margin-top: 0%;
+    margin-bottom: 50px;
+}
+
+
+ 
+/*  Hero Image */
+section#zen-intro {
+    background-image: url(../images/zen-garden-trees-moon.png);
+    background-size:60%;
+    background-repeat: no-repeat;
+    background-position: center 28%;
+    
+}
+
+/* Aside */
+.sidebar li {
+    list-style: none;
+    padding: 20px;
+}
+
+.design-selection li{
+    list-style: none;
+    padding: 15px 45px;
+    background-image: url(../images/tree-icon-small.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 30px;
+}
+
+.design-selection li a {
+    display: block;
+}
+
+.sidebar li {
+    transition: all .3s ease-in-out;
+}
+
+.sidebar li:hover {
+    scale: 1.1;
+    transform: translate(30px, 0px);
+  }
+
+.design-selection a.designer-name  {
+    display: inline;
+    text-transform: capitalize;
+    font-style:italic;
+    font-size: .8rem;
+}
+
+.design-selection,
+.design-archives,
+.zen-resources {
+    background-color: $text-light;
+    margin-left: 10px;
+}
+
+.design-selection, .design-archives {
+    margin-bottom: 40px;
+}
+
+.sidebar nav, .zen-resources ul {
+    padding-bottom: 15px;
+}
+
+.design-selection h3 {
+    background-color: $accent2;
+    padding: 25px;
+}
+
+.design-archives h3, 
+.zen-resources h3 {
+    background-color: $primary;
+    padding: 25px;
+}
+
+
+/*  Yuri Media Queries */
+@media (min-width: 600px) and (max-width: 880px){
+h1 {
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.design-selection {
+  grid-area: design;
+}
+.design-archives{
+  grid-area: archives;
+}
+.zen-resources {
+  grid-area: resources;
+}
+
+.sidebar .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "design design archives"
+    "design design resources"
+}
+
+.design-selection {
+    margin-bottom:0px;
+}
+
+.sidebar .wrapper a {
+    line-height: 1.5em;
+}
+    
+.design-archives ul,
+.zen-resources ul {
+    padding-left: 0em
+}
+
+.sidebar h3 {
+    font-size: 1.5em;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+}
+
+@media (max-width: 600px){
+
+h1 {
+    font-size: 3em;
+    line-height: 1.1em;
+    height: 200px;
+}
+
+.intro h2 {
+    float: none;
+    font-size: 1.2em;
+    height: 40px;
+    padding-right: 0;
+}
+
+.summary p{
+    font-size: .6em;
+}
+
+header, 
+.summary {
+    padding-right: 8%;
+    padding-left: 8%;
+} 
+h3 {
+    font-size: 1.5em;
+}
+
+p, a {
+    font-size: .8em;
+}   
+}
+
+@media (max-width: 600px){
+  .design-archives li,
+  .zen-resources li {
+      padding-bottom: 0px;
+      padding-top: 15px;
+      padding-left: 1em;
+  }
+
+.sidebar h3,
+.sidebar ul{
+      padding-left: 2em;
+  }
+
+  section#zen-intro {
+    background-position: center 25%;
+}
+}
+
+footer {
+    margin-top: 5%;
+    
+    a {
+        background-image: linear-gradient(#0F9252, #7ED957);
+        color: white;
+        padding: .3em .8em;
+        margin-right: 1em;
+        line-height: 3em;
+    }
+}
